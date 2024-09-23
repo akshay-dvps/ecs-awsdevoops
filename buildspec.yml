@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+        #      - npm run build # Optional, if you have a build script in package.json
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing Docker image to Amazon ECR
+      - aws ecr get-login-password --region ap-northeast-2 | docker login --username AWS --password-stdin 141282679348.dkr.ecr.ap-northeast-2.amazonaws.com
+      - docker build -t nodeapp:latest .
+      - docker tag nodeapp:latest 141282679348.dkr.ecr.ap-northeast-2.amazonaws.com/nodeapp:latest
+      - docker push 141282679348.dkr.ecr.ap-northeast-2.amazonaws.com/nodeapp:latest
+
+artifacts:
+  files:
+    - imagedefinitions.json

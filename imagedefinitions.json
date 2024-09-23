@@ -1,0 +1,6 @@
+[
+    {
+      "name": "nodecontaineneww",
+      "imageUri": "141282679348.dkr.ecr.ap-northeast-2.amazonaws.com/nodeapp:latest"
+    }
+  ]
