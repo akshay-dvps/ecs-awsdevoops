@@ -9,6 +9,6 @@
 
 4. the autodeploy works only when i created an imagedefinition.yml file with  image details
 
-5. now configured a pipeline for auto deploy. please note that in deploy configuration in pipeline  select the ecs details we alredy creted
+5. now configured a pipeline for auto deploy. please note that in deploy configuration in pipeline  select the ecs details we alredy creted  (Choose buidartifact when giving ecs details in the pipeline configurations)
 
 6. make any changes in the repo and check the source, build and deploy stages. if everything is passed we can verify the working by calling the LB endpoint.
